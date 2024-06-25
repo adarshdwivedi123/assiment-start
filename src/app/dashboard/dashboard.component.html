@@ -1,0 +1,126 @@
+<!-- <app-navbar></app-navbar> -->
+
+  <!-- <a class="active" href="#Products">Products</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a> -->
+  <div class="search-container" style="margin-top: 20px;margin-left: 10px;">
+    <form>
+      <input
+        type="text"
+        placeholder="Search.."
+        name="search"
+        (keyup)="applyFilter($event)"
+        #input
+      />
+    </form>
+  </div>
+
+
+<div class="table-style">
+
+  <div class="mat-elevation-z8">
+    <table
+      mat-table
+      [dataSource]="dataSource"
+      matSort
+      
+      class="mat-elevation-z8"
+    >
+      <tr class="mat-row">
+        <td class="mat-cell" colspan="4">No data matching the fi</td>
+      </tr>
+
+      
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="Name">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          sortActionDescription="Sort by number"
+        >
+          No.
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+      <ng-container matColumnDef="Height">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          sortActionDescription="Sort by number"
+        >
+          No.
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.height }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="Mass">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          sortActionDescription="Sort by name"
+        >
+          Mass
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.mass }}</td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="HairColor">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          sortActionDescription="Sort by weight"
+        >
+          HairColor
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.hair_color }}</td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+       <ng-container
+        matColumnDef="EyeColor"
+        style="border: 2px solid blueviolet; height: 10px; width: 2px"
+      >
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          sortActionDescription="Sort by symbol"
+        >
+          Eye 
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.eye_color }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+        mat-row
+        *matRowDef="let row; columns: displayedColumns "
+        (click)="onRowClicked(row)"
+        
+      ></tr>
+
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">
+          <!-- No data matching the filter "{{ input.value }}" -->
+        </td>
+      </tr>
+    </table>
+    
+    <!-- Pagination -->
+
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+      aria-label="Select page of periodic elements"
+    >
+    </mat-paginator>
+  </div>
+</div>

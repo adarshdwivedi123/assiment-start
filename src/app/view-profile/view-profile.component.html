@@ -1,0 +1,166 @@
+<mat-accordion>
+    <!-- First Expansion Panel -->
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Character </mat-panel-title>
+      <mat-panel-description> Character Detail </mat-panel-description>
+    </mat-expansion-panel-header>
+    <!-- Table -->
+    <table class="table-cls" aria-describedby="mydesc">
+      <th></th>
+      
+      <tr class="table-height">
+        
+        <td class="th-left" style="width: 1%">
+          <label class="key-lbl-cls"><b>Name</b></label>
+        </td>
+        <td class="td-center">
+          <label>{{ this.birthYear}}</label>
+        </td>
+
+        
+        <td class="th-left">
+          <label class="key-lbl-cls"><b>Mass</b></label>
+        </td>
+        <td class="td-center">
+          <label>
+            {{ this.mass }}
+          </label>
+        </td>
+      </tr>
+
+      
+      <tr class="table-height">
+        
+        <td class="th-left" style="width: 2%">
+          <label class="key-lbl-cls"><b>EyeColor</b></label>
+        </td>
+        <td class="td-center" style="width: 2%">
+          <label>{{ this.eye_color }}</label>
+        </td>
+
+        
+        <td class="th-left" style="width: 2%">
+          <label class="key-lbl-cls"><b>Birth</b> </label>
+        </td>
+        <td class="td-center" style="width: 2%">
+          <label>
+            {{ this.birth_year }}
+          </label>
+        </td>
+      </tr>
+    </table>
+  </mat-expansion-panel>
+  <mat-expansion-panel
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title> Home World Data </mat-panel-title>
+      <mat-panel-description>
+        Currently I am {{ panelOpenState ? "open" : "closed" }}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <table class="table-cls" aria-describedby="mydesc">
+      <th></th>
+      <!-- First row -->
+      <tr class="table-height">
+        <!-- Package Name -->
+        <td class="th-left" style="width: 1%">
+          <label class="key-lbl-cls"><b>HomePersonName</b></label>
+        </td>
+        <td class="td-center">
+          <label>{{ this.birthYear }}</label>
+        </td>
+
+        <!--Package Size-->
+        <td class="th-left">
+          <label class="key-lbl-cls"><b>RotationPeriod</b></label>
+        </td>
+        <td class="td-center">
+          <label>
+            {{ this.eyeColor }}
+          </label>
+        </td>
+      </tr>
+
+      <!-- Second row -->
+      <tr class="table-height">
+        <!-- Package Name -->
+        <td class="th-left" style="width: 2%">
+          <label class="key-lbl-cls"><b>Dimater</b></label>
+        </td>
+        <td class="td-center" style="width: 2%">
+          <label>{{ this.genderHome }}</label>
+        </td>
+
+        <!-- Geography -->
+        <td class="th-left" style="width: 2%">
+          <label class="key-lbl-cls"><b>Dessert</b> </label>
+        </td>
+        <td class="td-center" style="width: 2%">
+          <label>
+            {{ this.hairColor }}
+          </label>
+        </td>
+      </tr>
+    </table>
+  </mat-expansion-panel>
+  <mat-expansion-panel
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title> StarterShip </mat-panel-title>
+      <mat-panel-description>
+        Currently I am {{ panelOpenState ? "open" : "closed" }}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <table class="table-cls" aria-describedby="mydesc">
+      <th></th>
+      
+      <tr class="table-height">
+        
+        <td class="th-left" style="width: 1%">
+          <label class="key-lbl-cls"><b>Vehicle</b></label>
+        </td>
+        <td class="td-center">
+          <label>{{ this.birthYear }}</label>
+        </td>
+
+        <!--Package Size-->
+        <td class="th-left">
+          <label class="key-lbl-cls"><b>RotationPeriod</b></label>
+        </td>
+        <td class="td-center">
+          <label>
+            {{ this.eyeColor }}
+          </label>
+        </td>
+      </tr>
+
+      
+      <tr class="table-height">
+        
+        <td class="th-left" style="width: 2%">
+          <label class="key-lbl-cls"><b>Dimater</b></label>
+        </td>
+        <td class="td-center" style="width: 2%">
+          <label>{{ this.genderHome }}</label>
+        </td>
+
+        
+        <td class="th-left" style="width: 2%">
+          <label class="key-lbl-cls"><b>Dessert</b> </label>
+        </td>
+        <td class="td-center" style="width: 2%">
+          <label>
+            {{ this.hairColor }}
+          </label>
+        </td>
+      </tr>
+    </table>
+  </mat-expansion-panel>
+</mat-accordion>
